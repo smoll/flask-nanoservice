@@ -11,4 +11,5 @@ branch_name=${branch_name##refs/heads/}
 branch_name=${branch_name:-HEAD}
 
 docker build --tag=${image_name}:${branch_name} .
+docker tag ${image_name}:${branch_name} ${image_name}:latest
 docker push ${image_name}
